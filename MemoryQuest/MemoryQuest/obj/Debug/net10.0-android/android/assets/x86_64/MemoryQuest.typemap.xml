@@ -1,4 +1,4 @@
-<api type="debug" assembly-name="MemoryQuest" mvid="8c791d0887f54b3f87d8720f7005652b">
+<api type="debug" assembly-name="MemoryQuest" mvid="b7d8705ed1be4f6b8adb8aa812f49304">
   <java-to-managed>
     <entry java-name="crc6416a5ca98307d5cb6/MainActivity" managed-name="MemoryQuest.MainActivity, MemoryQuest" managed-type-token-id="33554441" />
     <entry java-name="crc6416a5ca98307d5cb6/MainApplication" managed-name="MemoryQuest.MainApplication, MemoryQuest" managed-type-token-id="33554442" />
