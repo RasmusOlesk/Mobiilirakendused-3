@@ -91,7 +91,7 @@
             </CollectionView>
 
             <Button
-                Text="🔄 Uus mäng"
+                Text="Uus mäng"
                 Clicked="OnNewGameClicked"
                 BackgroundColor="{DynamicResource AccentColor}"
                 TextColor="White"
@@ -106,17 +106,17 @@
                 HorizontalOptions="Center" />
 
             <Grid ColumnDefinitions="*,*,*" ColumnSpacing="8">
-                <Button Text="☀ Hele"
+                <Button Text="Hele"
                         Grid.Column="0"
                         Clicked="OnLightThemeClicked"
                         CornerRadius="12" />
 
-                <Button Text="🌙 Tume"
+                <Button Text="Tume"
                         Grid.Column="1"
                         Clicked="OnDarkThemeClicked"
                         CornerRadius="12" />
 
-                <Button Text="🌈 Värviline"
+                <Button Text="Värviline"
                         Grid.Column="2"
                         Clicked="OnColorfulThemeClicked"
                         CornerRadius="12"

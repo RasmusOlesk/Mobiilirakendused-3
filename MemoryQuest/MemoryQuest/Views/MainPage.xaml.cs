@@ -35,6 +35,7 @@ public partial class MainPage : ContentPage
         UpdateStatistics();
     }
 
+    [Obsolete]
     private async void OnCardClicked(
         object sender, EventArgs e)
     {
@@ -56,7 +57,7 @@ public partial class MainPage : ContentPage
 
             // Muutke DisplayAlertAsync -> DisplayAlert
             await DisplayAlert(
-                "🎉 Palju õnne!",
+                "Palju õnne!",
                 $"Leidsid kõik paarid!\n\n" +
                 $"Punktid: {_player.Score}\n" +
                 $"Käigud: {_game.Moves}\n" +

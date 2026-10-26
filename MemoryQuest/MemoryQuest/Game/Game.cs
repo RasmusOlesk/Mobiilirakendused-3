@@ -35,7 +35,7 @@ public class Game
         // Six emoji symbols are duplicated so each one has a pair, then the list is shuffled.
         string[] symbols =
         [
-            "🍎", "🚀", "🐱", "🌈", "⚽", "🎵"
+            "🍎", "🚀", "🐱", "🫵", "⚽", "🎵"
         ];
 
         Cards = symbols

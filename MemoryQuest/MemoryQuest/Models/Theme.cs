@@ -43,7 +43,7 @@ public class Theme
         "Hele",
         Colors.WhiteSmoke,
         Colors.DarkSlateGray,
-        Colors.White,
+        Colors.LightGray,
         Colors.RoyalBlue,
         "OpenSansRegular");
 
@@ -59,7 +59,7 @@ public class Theme
         "Värviline",
         Color.FromArgb("#FFF0F5"),
         Color.FromArgb("#54245C"),
-        Color.FromArgb("#FFFFFF"),
+        Color.FromArgb("#E75480"),
         Color.FromArgb("#E75480"),
         "OpenSansRegular");
 }
