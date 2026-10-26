@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MemoryQuest.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Memory Quest"
+    BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="18">
+
+            <Label
+                Text="MEMORY QUEST"
+                FontSize="28"
+                FontAttributes="Bold"
+                FontFamily="{DynamicResource GameFont}"
+                TextColor="{DynamicResource TextColor}"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Leia kõik sobivad paarid!"
+                FontSize="16"
+                TextColor="{DynamicResource TextColor}"
+                HorizontalOptions="Center" />
+
+            <Grid ColumnDefinitions="*,*,*"
+                  ColumnSpacing="8">
+
+                <VerticalStackLayout Grid.Column="0"
+                                     HorizontalOptions="Center">
+                    <Label Text="Punktid"
+                           TextColor="{DynamicResource TextColor}" />
+                    <Label x:Name="ScoreLabel"
+                           Text="0"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="{DynamicResource AccentColor}" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="1"
+                                     HorizontalOptions="Center">
+                    <Label Text="Käigud"
+                           TextColor="{DynamicResource TextColor}" />
+                    <Label x:Name="MovesLabel"
+                           Text="0"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="{DynamicResource AccentColor}" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="2"
+                                     HorizontalOptions="Center">
+                    <Label Text="Paarid"
+                           TextColor="{DynamicResource TextColor}" />
+                    <Label x:Name="MatchesLabel"
+                           Text="0 / 6"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="{DynamicResource AccentColor}" />
+                </VerticalStackLayout>
+
+            </Grid>
+
+            <CollectionView
+                x:Name="CardsView"
+                SelectionMode="None">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout
+                        Orientation="Vertical"
+                        Span="3"
+                        HorizontalItemSpacing="8"
+                        VerticalItemSpacing="8" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Button
+                            Text="{Binding DisplayText}"
+                            Clicked="OnCardClicked"
+                            HeightRequest="95"
+                            FontSize="30"
+                            CornerRadius="16"
+                            BackgroundColor="{DynamicResource CardColor}"
+                            TextColor="{DynamicResource TextColor}"
+                            FontFamily="{DynamicResource GameFont}"
+                            Padding="4" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+            <Button
+                Text="Uus mäng"
+                Clicked="OnNewGameClicked"
+                BackgroundColor="{DynamicResource AccentColor}"
+                TextColor="White"
+                CornerRadius="14"
+                HeightRequest="52" />
+
+            <Label
+                Text="Vali kujundus"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="{DynamicResource TextColor}"
+                HorizontalOptions="Center" />
+
+            <Grid ColumnDefinitions="*,*,*" ColumnSpacing="8">
+                <Button Text="Hele"
+                        Grid.Column="0"
+                        Clicked="OnLightThemeClicked"
+                        CornerRadius="12" />
+
+                <Button Text="Tume"
+                        Grid.Column="1"
+                        Clicked="OnDarkThemeClicked"
+                        CornerRadius="12" />
+
+                <Button Text="Värviline"
+                        Grid.Column="2"
+                        Clicked="OnColorfulThemeClicked"
+                        CornerRadius="12"
+                        FontSize="12" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

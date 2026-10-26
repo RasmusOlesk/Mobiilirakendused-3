@@ -1,0 +1,96 @@
+﻿using Microsoft.Maui.Controls;
+using Microsoft.Maui.Storage;
+
+namespace MemoryQuest.Services;
+
+public sealed class AudioService
+{
+    private static readonly Lazy<AudioService> InstanceLazy = new(() => new AudioService());
+
+    private readonly Dictionary<string, MediaElement> _players = new(StringComparer.OrdinalIgnoreCase);
+    private MediaElement? _backgroundSongPlayer;
+
+    public static AudioService Instance => InstanceLazy.Value;
+
+    private AudioService()
+    {
+    }
+
+    public async Task PlayMenuClickAsync()
+    {
+        await PlayAssetAsync("Sounds/Click_1.mp3");
+    }
+
+    public async Task PlayGameClickAsync()
+    {
+        await PlayAssetAsync("Sounds/Click_2.mp3");
+    }
+
+    public async Task PlayVictoryAsync()
+    {
+        await PlayAssetAsync("Sounds/Victory.mp3");
+    }
+
+    public async Task StartGameSongAsync()
+    {
+        if (_backgroundSongPlayer is not null && _backgroundSongPlayer.IsPlaying)
+        {
+            return;
+        }
+
+        _backgroundSongPlayer = await GetOrCreatePlayerAsync("Music/Song.mp3", loop: true, volume: 0.55);
+        _backgroundSongPlayer.Play();
+    }
+
+    public void StopGameSong()
+    {
+        _backgroundSongPlayer?.Stop();
+    }
+
+    private async Task PlayAssetAsync(string assetPath)
+    {
+        var player = await GetOrCreatePlayerAsync(assetPath, loop: false, volume: 1.0);
+        player.Stop();
+        player.Play();
+    }
+
+    private async Task<MediaElement> GetOrCreatePlayerAsync(string assetPath, bool loop, double volume)
+    {
+        if (_players.TryGetValue(assetPath, out var existingPlayer) && existingPlayer is not null)
+        {
+            return existingPlayer;
+        }
+
+        var localFilePath = await CopyAssetToAppDataAsync(assetPath);
+        var mediaElement = new MediaElement
+        {
+            Source = MediaSource.FromFile(localFilePath),
+            ShouldAutoPlay = false,
+            ShouldLoop = loop,
+            Volume = volume,
+            WidthRequest = 0,
+            HeightRequest = 0,
+            IsVisible = false
+        };
+
+        _players[assetPath] = mediaElement;
+        return mediaElement;
+    }
+
+    private static async Task<string> CopyAssetToAppDataAsync(string assetPath)
+    {
+        var targetDirectory = Path.Combine(FileSystem.AppDataDirectory, Path.GetDirectoryName(assetPath) ?? string.Empty);
+        Directory.CreateDirectory(targetDirectory);
+
+        var targetPath = Path.Combine(FileSystem.AppDataDirectory, assetPath.Replace('/', Path.DirectorySeparatorChar));
+
+        if (!File.Exists(targetPath))
+        {
+            await using var input = await FileSystem.OpenAppPackageFileAsync(assetPath);
+            await using var output = File.Create(targetPath);
+            await input.CopyToAsync(output);
+        }
+
+        return targetPath;
+    }
+}

@@ -1,41 +1,103 @@
 ﻿namespace MemoryQuest.Models;
 
+// Represents the active player and the score information tracked during play.
 public class Player
 {
-    // The player keeps their name and the statistics used during the game session.
+    // Display name of the player, shown in the game UI.
     public string Name { get; private set; }
 
+    // Current score during the current game round.
     public int Score { get; private set; }
+
+    // Total number of rounds played in this session.
     public int GamesPlayed { get; private set; }
+
+    // Highest score achieved by the player.
     public int BestScore { get; private set; }
 
     public Player(string name)
     {
-        // A blank name falls back to a default player name so the UI still has a valid display value.
+        // If the name is empty, a fallback name is used to keep the UI valid.
         Name = string.IsNullOrWhiteSpace(name)
             ? "Mängija"
             : name.Trim();
     }
 
+    // Adds score points when the value is positive.
     public void AddPoints(int points)
     {
-        // Points are only awarded for positive values to avoid any accidental score resets.
         if (points > 0)
             Score += points;
     }
 
+    // Starts a new round and resets only the round score.
     public void StartNewGame()
     {
-        // A new round always starts with a clean score.
         Score = 0;
     }
 
+    // Saves totals after a round is finished and updates the best score if needed.
     public void FinishGame()
     {
-        // Finished rounds are counted and the best result is stored for later comparisons.
         GamesPlayed++;
 
         if (Score > BestScore)
             BestScore = Score;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

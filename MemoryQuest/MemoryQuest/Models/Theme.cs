@@ -1,8 +1,8 @@
 ﻿namespace MemoryQuest.Models;
 
+// Represents one visual theme for the app, including background, text and accent colors.
 public class Theme
 {
-    // Each theme defines the colors and font used to style the game screen.
     public string Name { get; }
     public Color BackgroundColor { get; }
     public Color TextColor { get; }
@@ -26,9 +26,9 @@ public class Theme
         FontFamily = fontFamily;
     }
 
+    // Applies this theme to the current page by setting the shared dynamic resources.
     public void Apply(ContentPage page)
     {
-        // The selected theme is applied directly to the page and the XAML resources used by the UI.
         page.BackgroundColor = BackgroundColor;
 
         page.Resources["BackgroundColor"] = BackgroundColor;
@@ -38,7 +38,7 @@ public class Theme
         page.Resources["GameFont"] = FontFamily;
     }
 
-    // These static themes let the player switch between a light, dark, and colorful visual style.
+    // Defines the available visual themes for the game.
     public static Theme Light => new(
         "Hele",
         Colors.WhiteSmoke,
@@ -63,3 +63,29 @@ public class Theme
         Color.FromArgb("#E75480"),
         "OpenSansRegular");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

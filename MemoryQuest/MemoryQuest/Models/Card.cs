@@ -1,16 +1,21 @@
 ﻿namespace MemoryQuest.Models;
 
+// Represents one memory card in the game board.
 public class Card
 {
-    // Each card has a unique identifier and the emoji symbol it represents.
+    // Unique identifier for the card instance.
     public int Id { get; }
+
+    // The symbol shown when the card is revealed.
     public string Symbol { get; }
 
-    // The card state tells whether it is currently visible to the player and whether it has been matched.
+    // Keeps track of whether the card is visible on the board right now.
     public bool IsRevealed { get; private set; }
+
+    // Marks whether the card pair has already been matched.
     public bool IsMatched { get; private set; }
 
-    // The UI can display a hidden question mark until the card is revealed or solved.
+    // The text shown in the UI when the card is hidden or visible.
     public string DisplayText =>
         IsRevealed || IsMatched ? Symbol : "?";
 
@@ -20,9 +25,9 @@ public class Card
         Symbol = symbol;
     }
 
+    // Shows the card if it is not already visible or solved.
     public bool Reveal()
     {
-        // A card cannot be shown twice if it is already visible or already matched.
         if (IsRevealed || IsMatched)
             return false;
 
@@ -30,17 +35,77 @@ public class Card
         return true;
     }
 
+    // Hides the card again unless it was already matched and should remain visible.
     public void Hide()
     {
-        // Matched cards stay visible, while unmatched cards are hidden again after a short delay.
         if (!IsMatched)
             IsRevealed = false;
     }
 
+    // Locks the card as solved and keeps it visible.
     public void MarkAsMatched()
     {
-        // When a pair is found, the card remains visible and is marked as solved.
         IsRevealed = true;
         IsMatched = true;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

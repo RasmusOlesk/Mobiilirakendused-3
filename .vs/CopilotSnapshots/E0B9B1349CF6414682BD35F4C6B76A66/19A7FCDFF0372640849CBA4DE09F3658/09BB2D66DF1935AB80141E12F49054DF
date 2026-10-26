@@ -1,0 +1,35 @@
+﻿using System.Globalization;
+using Microsoft.Maui.Storage;
+
+namespace MemoryQuest.Services;
+
+public static class AppSettingsService
+{
+    private const string LanguageKey = "MemoryQuest.Language";
+
+    public static string CurrentLanguage
+    {
+        get => Preferences.Default.Get(LanguageKey, "et");
+        set
+        {
+            var normalized = string.IsNullOrWhiteSpace(value) ? "et" : value;
+            Preferences.Default.Set(LanguageKey, normalized);
+            ApplyLanguage();
+        }
+    }
+
+    //public static string ConnectionString { get; set; } = "Server=(localdb)\\MSSQLLocalDB;Database=MemoryQuestDb;Trusted_Connection=true;MultipleActiveResultSets=true";
+    public static string ConnectionString { get; set; } = "Server=LAPTOP-A6OKPOTI\\SQLEXPRESS;Database=MemoryQuestDb;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True";
+
+    public static void ApplyLanguage()
+    {
+        var culture = CurrentLanguage switch
+        {
+            "en" or "en-US" => new CultureInfo("en-US"),
+            _ => new CultureInfo("et-EE")
+        };
+
+        CultureInfo.CurrentCulture = culture;
+        CultureInfo.CurrentUICulture = culture;
+    }
+}

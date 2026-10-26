@@ -1,0 +1,184 @@
+﻿using System.Data;
+using MemoryQuest.Models;
+using Microsoft.Data.SqlClient;
+
+namespace MemoryQuest.Services;
+
+public class SqlProfileService
+{
+    private readonly string _connectionString;
+
+    public SqlProfileService(string? connectionString = null)
+    {
+        _connectionString = string.IsNullOrWhiteSpace(connectionString)
+            ? AppSettingsService.ConnectionString
+            : connectionString;
+    }
+
+    public async Task EnsureDatabaseAsync()
+    {
+        await using var connection = new SqlConnection(_connectionString);
+        await connection.OpenAsync();
+
+        const string sql = @"
+            IF OBJECT_ID(N'dbo.Profiles', N'U') IS NULL
+            BEGIN
+                CREATE TABLE dbo.Profiles (
+                    Id INT IDENTITY(1,1) PRIMARY KEY,
+                    Name NVARCHAR(100) NOT NULL UNIQUE,
+                    CreatedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
+                    TotalGames INT NOT NULL DEFAULT 0,
+                    BestScore INT NOT NULL DEFAULT 0,
+                    TotalScore INT NOT NULL DEFAULT 0
+                );
+            END
+
+            IF OBJECT_ID(N'dbo.ProfileStatistics', N'U') IS NULL
+            BEGIN
+                CREATE TABLE dbo.ProfileStatistics (
+                    Id INT IDENTITY(1,1) PRIMARY KEY,
+                    ProfileId INT NOT NULL,
+                    Score INT NOT NULL,
+                    Moves INT NOT NULL,
+                    Matches INT NOT NULL,
+                    PlayedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
+                    CONSTRAINT FK_ProfileStatistics_Profiles FOREIGN KEY (ProfileId)
+                        REFERENCES dbo.Profiles(Id)
+                        ON DELETE CASCADE
+                );
+            END";
+
+        await using var command = new SqlCommand(sql, connection);
+        await command.ExecuteNonQueryAsync();
+    }
+
+    public async Task<List<GameProfile>> GetProfilesAsync()
+    {
+        const string sql = @"SELECT Id, Name, CreatedAt, TotalGames, BestScore, TotalScore FROM dbo.Profiles ORDER BY CreatedAt ASC;";
+
+        var profiles = new List<GameProfile>();
+
+        await using var connection = new SqlConnection(_connectionString);
+        await connection.OpenAsync();
+        await using var command = new SqlCommand(sql, connection);
+        await using var reader = await command.ExecuteReaderAsync();
+
+        while (await reader.ReadAsync())
+        {
+            profiles.Add(new GameProfile
+            {
+                Id = reader.GetInt32("Id"),
+                Name = reader.GetString("Name"),
+                CreatedAt = reader.GetDateTime("CreatedAt"),
+                TotalGames = reader.GetInt32("TotalGames"),
+                BestScore = reader.GetInt32("BestScore"),
+                TotalScore = reader.GetInt32("TotalScore")
+            });
+        }
+
+        return profiles;
+    }
+
+    public async Task<GameProfile?> GetProfileByIdAsync(int id)
+    {
+        const string sql = @"SELECT Id, Name, CreatedAt, TotalGames, BestScore, TotalScore FROM dbo.Profiles WHERE Id = @Id;";
+
+        await using var connection = new SqlConnection(_connectionString);
+        await connection.OpenAsync();
+        await using var command = new SqlCommand(sql, connection);
+        command.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+
+        await using var reader = await command.ExecuteReaderAsync();
+        if (!await reader.ReadAsync())
+        {
+            return null;
+        }
+
+        return new GameProfile
+        {
+            Id = reader.GetInt32("Id"),
+            Name = reader.GetString("Name"),
+            CreatedAt = reader.GetDateTime("CreatedAt"),
+            TotalGames = reader.GetInt32("TotalGames"),
+            BestScore = reader.GetInt32("BestScore"),
+            TotalScore = reader.GetInt32("TotalScore")
+        };
+    }
+
+    public async Task<bool> ProfileExistsAsync(string name)
+    {
+        const string sql = "SELECT COUNT(1) FROM dbo.Profiles WHERE Name = @Name;";
+
+        await using var connection = new SqlConnection(_connectionString);
+        await connection.OpenAsync();
+        await using var command = new SqlCommand(sql, connection);
+        command.Parameters.Add("@Name", SqlDbType.NVarChar, 100).Value = name.Trim();
+
+        var result = Convert.ToInt32(await command.ExecuteScalarAsync());
+        return result > 0;
+    }
+
+    public async Task<int> CreateProfileAsync(string name)
+    {
+        var trimmedName = name.Trim();
+        if (string.IsNullOrWhiteSpace(trimmedName))
+        {
+            throw new InvalidOperationException("Profile name cannot be empty.");
+        }
+
+        await EnsureDatabaseAsync();
+
+        var profiles = await GetProfilesAsync();
+        if (profiles.Count >= 5)
+        {
+            throw new InvalidOperationException("Maximum of 5 profiles reached.");
+        }
+
+        if (await ProfileExistsAsync(trimmedName))
+        {
+            throw new InvalidOperationException("Profile already exists.");
+        }
+
+        const string sql = @"INSERT INTO dbo.Profiles (Name, CreatedAt, TotalGames, BestScore, TotalScore)
+                             VALUES (@Name, SYSUTCDATETIME(), 0, 0, 0);
+                             SELECT CAST(SCOPE_IDENTITY() as int);";
+
+        await using var connection = new SqlConnection(_connectionString);
+        await connection.OpenAsync();
+        await using var command = new SqlCommand(sql, connection);
+        command.Parameters.Add("@Name", SqlDbType.NVarChar, 100).Value = trimmedName;
+
+        var id = Convert.ToInt32(await command.ExecuteScalarAsync());
+        return id;
+    }
+
+    public async Task SaveGameResultAsync(int profileId, int score, int moves, int matches)
+    {
+        if (profileId <= 0)
+        {
+            return;
+        }
+
+        await EnsureDatabaseAsync();
+
+        const string sql = @"
+            UPDATE dbo.Profiles
+            SET TotalGames = TotalGames + 1,
+                BestScore = CASE WHEN BestScore < @Score THEN @Score ELSE BestScore END,
+                TotalScore = TotalScore + @Score
+            WHERE Id = @ProfileId;
+
+            INSERT INTO dbo.ProfileStatistics (ProfileId, Score, Moves, Matches, PlayedAt)
+            VALUES (@ProfileId, @Score, @Moves, @Matches, SYSUTCDATETIME());";
+
+        await using var connection = new SqlConnection(_connectionString);
+        await connection.OpenAsync();
+        await using var command = new SqlCommand(sql, connection);
+        command.Parameters.Add("@ProfileId", SqlDbType.Int).Value = profileId;
+        command.Parameters.Add("@Score", SqlDbType.Int).Value = score;
+        command.Parameters.Add("@Moves", SqlDbType.Int).Value = moves;
+        command.Parameters.Add("@Matches", SqlDbType.Int).Value = matches;
+
+        await command.ExecuteNonQueryAsync();
+    }
+}

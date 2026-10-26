@@ -2,10 +2,9 @@
 
 namespace MemoryQuest.Games;
 
+// Main game logic for the memory match challenge.
 public class Game
 {
-    // The game keeps track of the currently open card, whether a turn is being processed,
-    // and the random order used for shuffling the symbol pairs before play begins.
     private readonly Random _random = new();
     private Card? _firstCard;
     private bool _isProcessing;
@@ -22,9 +21,9 @@ public class Game
         Player = player;
     }
 
+    // Starts a fresh memory game and shuffles all card pairs.
     public void Start()
     {
-        // A new game resets score-related counters and clears the previous card state.
         Player.StartNewGame();
 
         Moves = 0;
@@ -32,7 +31,6 @@ public class Game
         _firstCard = null;
         _isProcessing = false;
 
-        // Six emoji symbols are duplicated so each one has a pair, then the list is shuffled.
         string[] symbols =
         [
             "🍎", "🚀", "🐱", "🫵", "⚽", "🎵"
@@ -45,17 +43,15 @@ public class Game
             .ToList();
     }
 
+    // Handles a player's click on a card, compares it with the previous card and updates game state.
     public async Task<bool> FlipCardAsync(Card card)
     {
-        // Ignore taps if the game is already resolving a turn, the round is over,
-        // or the selected card is already matched or already visible.
         if (_isProcessing || IsFinished ||
             card.IsMatched || card.IsRevealed)
             return false;
 
         card.Reveal();
 
-        // First opened card is remembered so the next click can be compared against it.
         if (_firstCard is null)
         {
             _firstCard = card;
@@ -67,7 +63,6 @@ public class Game
         Card first = _firstCard;
         _firstCard = null;
 
-        // When both chosen cards match, they are locked as solved and the player earns points.
         if (first.Symbol == card.Symbol)
         {
             first.MarkAsMatched();
@@ -82,7 +77,6 @@ public class Game
             return IsFinished;
         }
 
-        // A mismatch is shown briefly so the player can see the symbols before both cards hide again.
         _isProcessing = true;
 
         await Task.Delay(800);
@@ -94,3 +88,47 @@ public class Game
         return false;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
