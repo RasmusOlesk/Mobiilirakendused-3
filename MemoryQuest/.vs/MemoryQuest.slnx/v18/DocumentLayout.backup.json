@@ -3,44 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\opilane\\source\\repos\\Mobiilirakendused-3\\MemoryQuest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\game\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\game\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\game\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\game\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\models\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\models\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\models\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\models\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\services\\themeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\services\\themeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\services\\themeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\services\\themeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\models\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\models\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\models\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\models\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\memoryquest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{3CFDEB1A-5B6B-44B3-A710-238A300439E1}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\memoryquest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|c:\\users\\opilane\\source\\repos\\mobiilirakendused-3\\memoryquest\\memoryquest\\memoryquest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B4C3F839-73ED-B142-19C8-D280F03F2143}|MemoryQuest\\MemoryQuest.csproj|solutionrelative:memoryquest\\memoryquest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +58,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "MauiProgram.cs",
               "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Mobiilirakendused-3\\MemoryQuest\\MemoryQuest\\MauiProgram.cs",
               "RelativeDocumentMoniker": "MemoryQuest\\MauiProgram.cs",
@@ -66,12 +66,11 @@
               "RelativeToolTip": "MemoryQuest\\MauiProgram.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-13T12:39:09.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-13T12:39:09.972Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "AppShell.xaml",
               "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Mobiilirakendused-3\\MemoryQuest\\MemoryQuest\\AppShell.xaml",
               "RelativeDocumentMoniker": "MemoryQuest\\AppShell.xaml",
@@ -79,12 +78,11 @@
               "RelativeToolTip": "MemoryQuest\\AppShell.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-10-13T12:17:45.83Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-13T12:17:45.83Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "ThemeService.cs",
               "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Mobiilirakendused-3\\MemoryQuest\\MemoryQuest\\Services\\ThemeService.cs",
               "RelativeDocumentMoniker": "MemoryQuest\\Services\\ThemeService.cs",
@@ -92,12 +90,11 @@
               "RelativeToolTip": "MemoryQuest\\Services\\ThemeService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-13T11:53:39.186Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-13T11:53:39.186Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Theme.cs",
               "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Mobiilirakendused-3\\MemoryQuest\\MemoryQuest\\Models\\Theme.cs",
               "RelativeDocumentMoniker": "MemoryQuest\\Models\\Theme.cs",
@@ -105,12 +102,11 @@
               "RelativeToolTip": "MemoryQuest\\Models\\Theme.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAIwD0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-13T11:52:28.452Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-13T11:52:28.452Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Mobiilirakendused-3\\MemoryQuest\\MemoryQuest\\Models\\Player.cs",
               "RelativeDocumentMoniker": "MemoryQuest\\Models\\Player.cs",
@@ -118,12 +114,11 @@
               "RelativeToolTip": "MemoryQuest\\Models\\Player.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-13T11:52:04.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-13T11:52:04.014Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Card.cs",
               "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Mobiilirakendused-3\\MemoryQuest\\MemoryQuest\\Models\\Card.cs",
               "RelativeDocumentMoniker": "MemoryQuest\\Models\\Card.cs",
@@ -131,8 +126,7 @@
               "RelativeToolTip": "MemoryQuest\\Models\\Card.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-13T11:52:18.761Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-13T11:52:18.761Z"
             },
             {
               "$type": "Document",
@@ -157,8 +151,7 @@
               "RelativeToolTip": "MemoryQuest\\Views\\MainPage.xaml",
               "ViewState": "AgIAAGAAAAAAAAAAAAAAABAAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-10-13T11:57:22.412Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-13T11:57:22.412Z"
             },
             {
               "$type": "Document",
@@ -170,21 +163,19 @@
               "RelativeToolTip": "MemoryQuest\\Views\\MainPage.xaml.cs",
               "ViewState": "AgIAAFgAAAAAAAAAAAAwwBQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-13T11:57:44.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-13T11:57:44.617Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "MemoryQuest",
+              "Title": "MemoryQuest.csproj",
               "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Mobiilirakendused-3\\MemoryQuest\\MemoryQuest\\MemoryQuest.csproj",
               "RelativeDocumentMoniker": "MemoryQuest\\MemoryQuest.csproj",
               "ToolTip": "C:\\Users\\opilane\\source\\repos\\Mobiilirakendused-3\\MemoryQuest\\MemoryQuest\\MemoryQuest.csproj",
               "RelativeToolTip": "MemoryQuest\\MemoryQuest.csproj",
               "ViewState": "AgIAABoAAAAAAAAAAAAcwEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-10-13T12:02:41.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-13T12:02:41.102Z"
             }
           ]
         }

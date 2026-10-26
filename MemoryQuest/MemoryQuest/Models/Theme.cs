@@ -2,6 +2,7 @@
 
 public class Theme
 {
+    // Each theme defines the colors and font used to style the game screen.
     public string Name { get; }
     public Color BackgroundColor { get; }
     public Color TextColor { get; }
@@ -27,6 +28,7 @@ public class Theme
 
     public void Apply(ContentPage page)
     {
+        // The selected theme is applied directly to the page and the XAML resources used by the UI.
         page.BackgroundColor = BackgroundColor;
 
         page.Resources["BackgroundColor"] = BackgroundColor;
@@ -36,6 +38,7 @@ public class Theme
         page.Resources["GameFont"] = FontFamily;
     }
 
+    // These static themes let the player switch between a light, dark, and colorful visual style.
     public static Theme Light => new(
         "Hele",
         Colors.WhiteSmoke,

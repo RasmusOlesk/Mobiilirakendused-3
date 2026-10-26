@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MemoryQuest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+9225df5c2e4be7c0899877a4bd87353f8a335941")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+529b8f795ec1bde2e5fdca351f379f0e405c8a8b")]
 [assembly: System.Reflection.AssemblyProductAttribute("MemoryQuest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MemoryQuest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

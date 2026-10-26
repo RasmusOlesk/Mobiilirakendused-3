@@ -5,6 +5,7 @@ namespace MemoryQuest.Views;
 
 public partial class MainPage : ContentPage
 {
+    // The page holds the player, the active game instance, and the currently selected visual theme.
     private readonly Player _player;
     private readonly Game _game;
 
@@ -24,6 +25,7 @@ public partial class MainPage : ContentPage
 
     private void StartNewGame()
     {
+        // Reset the result flag and create a fresh shuffled board before updating the UI.
         _isShowingResult = false;
 
         _game.Start();
@@ -34,7 +36,7 @@ public partial class MainPage : ContentPage
     }
 
     private async void OnCardClicked(
-    object sender, EventArgs e)
+        object sender, EventArgs e)
     {
         if (sender is not Button button ||
             button.BindingContext is not Card card)
@@ -68,6 +70,7 @@ public partial class MainPage : ContentPage
 
     private void UpdateStatistics()
     {
+        // The score, move count, and matched pairs are updated after each turn.
         ScoreLabel.Text = _player.Score.ToString();
         MovesLabel.Text = _game.Moves.ToString();
         MatchesLabel.Text = $"{_game.Matches} / 6";
@@ -99,6 +102,7 @@ public partial class MainPage : ContentPage
 
     private void ChangeTheme(Theme theme)
     {
+        // The active theme changes the page colors without reloading the whole app.
         _currentTheme = theme;
         _currentTheme.Apply(this);
     }
